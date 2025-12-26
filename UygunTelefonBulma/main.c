@@ -19,8 +19,21 @@ int main() {
     float fark;
     float toplam=0;
     int sayac=0;
+    //sayac degiskenini tanimlama sebebimiz programi manuellikten kurtarip
+    //daha kullanisli bir hale getirmek
+    //bu sayede dosyada kac satir yani binevi telefon var ise o kadar deger alip
+    //ortalamayi bulmayi sagladi
     float min=9000000;
+     /*dongulere baslamadan;
+    taslak projemizde şartimizi !feof(fp) ile kurmustuk ancak bu durum ortalmaya
+    yanlis deger atanmasına sebep oluyordu biz de şöyle düşündük
+    while dan istedigimiz seyi sarta baglayıp okutma
+    basarili sekilde okuyor isen devam et
+    basarisiz durum ise dosya bitince yasanacak ve okumayi birakacak*/
     while(fscanf(fp,"%s %s %f",t1.isim,t1.model,&t1.fiyat)==3)
+          //while mantigi;
+            //dosya her bir satirda uc sey okumali isim, model, fiyat
+                //her satir basina 3 kere basarili bir okuma gerceklestirilmeli
     {
         sayac++;
         toplam += t1.fiyat;
@@ -46,4 +59,5 @@ int main() {
     fclose(fp);
     fclose(fp2);
     return 0;
+
 }
